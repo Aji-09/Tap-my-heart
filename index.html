@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I LOVE YOU ROSALIE CASTILLO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #ffc0cb, #fff0f5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      padding: 2rem;
+      background: #fff;
+      border-radius: 2rem;
+      box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2);
+      max-width: 90%;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      color: #e91e63;
+      margin-bottom: 1rem;
+      animation: heartbeat 1.5s infinite;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+
+    .heart-btn {
+      font-size: 2.5rem;
+      cursor: pointer;
+      animation: heartbeat 1.5s infinite;
+      transition: transform 0.2s;
+    }
+
+    .heart-btn:hover {
+      transform: scale(1.2);
+    }
+
+    .count {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: #d81b60;
+      font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    .hearts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .hearts span {
+      position: absolute;
+      display: block;
+      color: #ff69b4;
+      font-size: 2rem;
+      animation: floatUp 6s infinite linear;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .container {
+        padding: 1.5rem;
+      }
+
+      .heart-btn {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>I LOVE YOU ROSALIE CASTILLO</h1>
+    <p>You are my sunshine, my heart, my everything. 💖</p>
+    <div>
+      <div class="heart-btn" onclick="incrementLove()">❤️ Tap My Heart</div>
+      <div class="count" id="loveCount">You have been loved 0 times</div>
+    </div>
+  </div>
+  <div class="hearts">
+    <!-- Floating hearts -->
+    <span style="left: 10%; animation-delay: 0s;">❤️</span>
+    <span style="left: 25%; animation-delay: 1s;">💖</span>
+    <span style="left: 40%; animation-delay: 2s;">💘</span>
+    <span style="left: 55%; animation-delay: 3s;">💕</span>
+    <span style="left: 70%; animation-delay: 4s;">💓</span>
+    <span style="left: 85%; animation-delay: 5s;">❣️</span>
+  </div>
+
+  <script>
+    let count = 0;
+    const loveCount = document.getElementById('loveCount');
+
+    function incrementLove() {
+      count++;
+      loveCount.textContent = `You have been loved ${count} time${count === 1 ? '' : 's'}`;
+    }
+  </script>
+</body>
+</html>
